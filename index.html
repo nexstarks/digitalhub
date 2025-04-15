@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" sizes="64x64" href="img/logo.png">
+  <title>Digital Hub</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Digital Hub</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-slider">
+    <div class="slider-container">
+      <div class="slides" id="slides">
+        <img src="img/service-1.jpg" alt="Virtual Tour 1">
+        <img src="img/service-2.jpg" alt="Virtual Tour 2">
+        <img src="img/service-3.jpg" alt="Virtual Tour 3">
+        
+      </div>
+  
+      <!-- Text over slider -->
+      <div class="hero-text">
+        <h1>Digital Hub</h1>
+        <p>From Clicks to Customers — Smarter Google Business Management.</p>
+      </div>
+  
+      <!-- Arrow buttons -->
+      <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+  
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+  
+    <div class="service-box">
+      <h3><i class="fas fa-map-marker-alt icon"></i> Google Local SEO</h3>
+      <p>
+        Dominate “near me” searches with our AI-enhanced Local SEO solutions...
+      </p>
+    </div>
+  
+    <div class="service-box">
+      <h3><i class="fas fa-vr-cardboard icon"></i> Google 360° Virtual Tours</h3>
+      <p>
+        Deliver immersive virtual experiences with AI-optimized 360° tours...
+      </p>
+    </div>
+  
+    <div class="service-box">
+      <h3><i class="fas fa-globe icon"></i> Website SEO</h3>
+      <p>
+        Supercharge your website’s search performance with AI-driven SEO...
+      </p>
+    </div>
+  
+    <div class="service-box">
+      <h3><i class="fas fa-cube icon"></i> Matterport 3D Model Using AI</h3>
+      <p>
+        Transform real-world spaces into interactive Matterport 3D models powered by AI...
+      </p>
+    </div>
+  </section>
+  
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: <a href="tel:+919740298805">+919740298805</a></p>
+    <p>📍 Address: Jayanagar 4th block, Bangalore - 560041</p>
+    <p>📧 Email: <a href="mailto:digitalhub0053@gmail.com">digitalhub0053@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 DigitalHub All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  const slides = document.getElementById('slides');
+  const totalSlides = slides.children.length;
+  let currentIndex = 0;
+
+  function moveSlide(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = totalSlides - 1;
+    if (currentIndex >= totalSlides) currentIndex = 0;
+
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+  </script>
+</body>
+</html>
